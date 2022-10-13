@@ -16,7 +16,7 @@ CORS(app)
 # init obj sqlalchemy
 db = SQLAlchemy(app)
 
-# Confg DB
+# Confg DB (utk sementara di Sqlite3)
 basedir = os.path.dirname(os.path.abspath(__file__))
 database = "sqlite:///" + os.path.join(basedir, "db.sqlite")
 app.config["SQLALCHEMY_DATABASE_URI"] = database
@@ -48,7 +48,7 @@ class KlasRest(Resource):
         # tampilkan data dari DB
         query = ModelDB.query.all()
 
-        # iterasi pada ModelDB dengan teknik 
+        # iterasi pada ModelDB dengan teknik looping
         output = [
             {
                 "id":data.id,
@@ -86,7 +86,7 @@ class KlasRest(Resource):
     # delete all Data
     def delete(self):
         # query all data
-        query = ModelDB.query.all() # list => looping
+        query = ModelDB.query.all() # list comprehentions => looping
 
         # looping
         for data in query:
@@ -102,7 +102,7 @@ class KlasRest(Resource):
         
 
 
-# Class Update & Del
+# Class Update & Dell
 class UpdateData(Resource):
     def put(self, id):
         query = ModelDB.query.get(id) #Berdasarkan ID
