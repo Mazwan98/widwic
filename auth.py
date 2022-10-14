@@ -59,7 +59,7 @@ class Dashboard(Resource):
     # nambah decorator utk mengunci
     @token_required
     def get(self):
-        return jsonify({"msg":"Halaman Dashboard"})
+        return jsonify({"msg":"Sukses ! Ini Halaman Dashboard !"})
 
 
 # Page not-protected
