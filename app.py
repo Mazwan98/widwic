@@ -142,7 +142,7 @@ class UpdateData(Resource):
 
 # init url / api 
 # testing
-api.add_resource(KlasRest, "/api/", methods=["GET", "POST", "DELETE"])
+api.add_resource(KlasRest, "/api", methods=["GET", "POST", "DELETE"])
 api.add_resource(UpdateData, "/api/<id>", methods=["PUT", "DELETE"])
 
 if __name__ == "__main__":
